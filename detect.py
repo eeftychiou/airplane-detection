@@ -34,8 +34,8 @@ mask=cv2.imread(os.path.join(masks,"smallmask.png"))
 mask=cv2.cvtColor(mask,cv2.COLOR_BGR2GRAY)
 
 parser = argparse.ArgumentParser(description='Process options')
-parser.add_argument('--cascade', help='define cascade classifier' )
-parser.add_argument('--video', help='define video')
+parser.add_argument('--cascade', help='define cascade classifier',required=True )
+parser.add_argument('--video', help='define video',required=True)
 parser.add_argument('--savedetections', help='save Haar Detections', action="store_true")
 parser.add_argument('--savemotiondetections', help='Save motion detections', action="store_true")
 parser.add_argument('--overlapratio', help='Overlap Ratio 0-1', default=0.6)
@@ -212,7 +212,7 @@ def create_list():
 
 if __name__ == '__main__':
     import sys, getopt
-  
+
 
 
     index=0
